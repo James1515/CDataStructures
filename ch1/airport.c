@@ -79,7 +79,7 @@ void DeleteLastNode(NodeType **L)
 	    CurrentNode = CurrentNode->Link;
 	  }
 
-	//Now PreviousNode points to the next-to-last nodeon the list
+	//Now PreviousNode points to the next-to-last node on the list
 	//and CurrentNode points to the last node on the list.
 
 	PreviousNode->Link = NULL; //last node gets null link.
@@ -97,14 +97,13 @@ void InsertNewLastNode(char *A, NodeType **L)
   //list.
 
   NodeType *N, *P;
-  
+
   //Allocate a new node N with Airport  == A and Link == NULL
 
   N = (NodeType *)malloc(sizeof(NodeType));
   strcpy(N->Airport, A);
   N->Link = NULL;
-  
-  
+
   if(*L == NULL)
     {
       *L = N; //Let N become the new value for L:
@@ -115,7 +114,7 @@ void InsertNewLastNode(char *A, NodeType **L)
       //pointer variable P.
 
       P = *L;
-      
+
       while(P->Link != NULL) P = P->Link;
 
       //Finally, link node N onto the end of the list.
